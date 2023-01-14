@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <script>
+        var importObject;
+        /*
+        (export "add" (func $add))
+        (export "sub" (func $sub))
+        (export "mul" (func $mul))
+        (export "div" (func $div))
+        */
+        WebAssembly.instantiateStreaming(fetch("calculator.wasm")).then(
+            (obj) => {
+                // Call an exported function:
+                //obj.instance.exports.exported_func();
+                importObject = obj;
+                let res = obj.instance.exports.add(3, 4);
+                console.log("Test 3 + 4 =")
+                console.log(res)
+            });
+
+        function add() {
+            let first = document.getElementById("fname").value;
+            let second = document.getElementById("lname").value;
+            let res =  importObject.instance.exports.add(first, second);
+            show(res)
+        }
+
+        function sub() {
+            let first = document.getElementById("fname").value;
+            let second = document.getElementById("lname").value;
+            let res =  importObject.instance.exports.sub(first, second);
+            show(res)
+        }
+
+        function mul() {
+            let first = document.getElementById("fname").value;
+            let second = document.getElementById("lname").value;
+            let res =  importObject.instance.exports.mul(first, second);
+            show(res)
+        }
+        function div() {
+            let first = document.getElementById("fname").value;
+            let second = document.getElementById("lname").value;
+            let res =  importObject.instance.exports.div(first, second);
+            show(res)
+        }
+        function show(msg) {
+            window.alert(msg)
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Call Wasm function from javascript</h1>
+    <p> Check consol for sucessfull load</p>
+    
+    <label for="fname">First</label><br>
+    <input type="text" id="fname" name="fname" value="0""><br>
+  <label for=" lname">Second</label><br>
+    <input type="text" id="lname" name="lname" value="0"><br><br>
+    <input type="button" value="add" onclick="add();">
+    <input type="button" value="sub" onclick="sub();">
+    <input type="button" value="mul" onclick="mul();">
+    <input type="button" value="div" onclick="div();">
+   
+</body>
+
+
+</html>
