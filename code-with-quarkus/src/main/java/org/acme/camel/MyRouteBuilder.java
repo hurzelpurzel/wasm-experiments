@@ -1,6 +1,5 @@
 package org.acme.camel;
 
-import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 
 /**
@@ -19,7 +18,8 @@ public class MyRouteBuilder extends RouteBuilder {
 
         // here is a sample which processes the input files
        
-        from("file:src/test/resources/?fileName=input.csv&noop=true&delay=30000")
+        from("direct:myroute")
+            .pollEnrich("file:src/test/resources/?fileName=input.csv&noop=true")
             .unmarshal().csv()
             .process(proc)
             .marshal()

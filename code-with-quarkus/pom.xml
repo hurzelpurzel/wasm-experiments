@@ -49,6 +49,12 @@
       <artifactId>camel-quarkus-file</artifactId>
       <version>2.15.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-direct -->
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-direct</artifactId>
+      <version>2.15.0</version>
+    </dependency>
     <!-- Additional repo https://www.jfrog.com/confluence/display/BT/Maven%20Repositories -->
     <dependency>
       <groupId>org.wasmer</groupId>
