@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["ludger.pottmeier@atos.net <ludger.pottmeier@atos.net>"]
+description = "My first spin project"
+name = "hello-wasm"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-wasm"
+source = "target/wasm32-wasi/release/hello_wasm.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
