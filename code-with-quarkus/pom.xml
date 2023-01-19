@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.acme</groupId>
   <artifactId>code-with-quarkus</artifactId>
@@ -16,8 +17,8 @@
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
   </properties>
- 
-  
+
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -30,6 +31,24 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-core -->
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-core</artifactId>
+      <version>2.15.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-csv -->
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-csv</artifactId>
+      <version>2.15.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-file -->
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-file</artifactId>
+      <version>2.15.0</version>
+    </dependency>
     <!-- Additional repo https://www.jfrog.com/confluence/display/BT/Maven%20Repositories -->
     <dependency>
       <groupId>org.wasmer</groupId>
@@ -112,7 +131,7 @@
       </plugin>
     </plugins>
   </build>
- 
+
   <profiles>
     <profile>
       <id>native</id>
