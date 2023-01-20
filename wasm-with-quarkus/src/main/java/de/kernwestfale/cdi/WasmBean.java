@@ -20,8 +20,8 @@ public abstract class WasmBean<T extends AbstractCmd>{
         this.wasm = wasm;
     }
     
-    @PostConstruct
-    public void postConstruct()  {
+  
+     void postConstruct()  {
 
         
         try {
@@ -43,7 +43,7 @@ public abstract class WasmBean<T extends AbstractCmd>{
     public abstract void invoke(T cmd);
 
     @PreDestroy
-    public void preDestroy(){
+     void preDestroy(){
         instance.close();
     }
 }

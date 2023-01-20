@@ -14,10 +14,10 @@ public class CalculatorCmd extends AbstractCmd{
 
     public List<String> toResultline(){
         List<String> data = new ArrayList<String>();
-        data.set(0, this.getCmd());
-        data.set(1, String.valueOf(this.getArgs()[0]));
-        data.set(2, String.valueOf(this.getArgs()[1]));
-        data.set(3, String.valueOf(this.getResults()[0]));
+        data.add(0, this.getCmd());
+        data.add(1, String.valueOf(this.getArgs()[0]));
+        data.add(2, String.valueOf(this.getArgs()[1]));
+        data.add(3, String.valueOf(this.getResults()[0]));
         return data;
     }
     
