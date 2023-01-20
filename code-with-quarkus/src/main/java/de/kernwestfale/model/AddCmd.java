@@ -1,4 +1,4 @@
-package org.acme.model;
+package de.kernwestfale.model;
 
 public class AddCmd extends CalculatorCmd{
 

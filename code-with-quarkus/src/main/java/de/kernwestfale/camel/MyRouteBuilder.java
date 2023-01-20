@@ -1,4 +1,4 @@
-package org.acme.camel;
+package de.kernwestfale.camel;
 
 import org.apache.camel.builder.RouteBuilder;
 
@@ -18,7 +18,7 @@ public class MyRouteBuilder extends RouteBuilder {
 
         // here is a sample which processes the input files
        
-        from("direct:myroute")
+        from("timer://foo?fixedRate=true&period=10000")
             .pollEnrich("file:src/test/resources/?fileName=input.csv&noop=true")
             .unmarshal().csv()
             .process(proc)

@@ -43,6 +43,12 @@
       <artifactId>camel-quarkus-csv</artifactId>
       <version>2.15.0</version>
     </dependency>
+     <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-csv -->
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-timer</artifactId>
+      <version>2.15.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-file -->
     <dependency>
       <groupId>org.apache.camel.quarkus</groupId>

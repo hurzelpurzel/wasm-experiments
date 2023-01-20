@@ -1,12 +1,14 @@
-package org.acme.wasm;
+package de.kernwestfale.wasm;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-
-import org.acme.model.AbstractCmd;
+import javax.enterprise.context.ApplicationScoped;
 
 import org.wasmer.*;
+
+import de.kernwestfale.model.AbstractCmd;
+
 
 public class WasmLoader {
 
@@ -16,6 +18,7 @@ public class WasmLoader {
         this.wasm = wasm;
     }
 
+    
     public void process(AbstractCmd cmd) throws IOException {
 
         Instance instance = null;

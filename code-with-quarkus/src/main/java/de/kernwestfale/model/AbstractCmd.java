@@ -1,4 +1,4 @@
-package org.acme.model;
+package de.kernwestfale.model;
 
 import java.io.Serializable;
 
