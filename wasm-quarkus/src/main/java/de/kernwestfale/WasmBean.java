@@ -29,8 +29,8 @@ public  class WasmBean implements Serializable{
        instance.close();
    }
     
-  @PostConstruct
-     void postConstruct()  {
+    @PostConstruct
+    void postConstruct()  {
 
         
         try {
